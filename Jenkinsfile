@@ -2,19 +2,9 @@
   - hosts: prod
     become: yes
     tasks:
-    - name: install httpd
-      yum:
-        name: httpd
-        state: present
-    - name: start httpd
-      service:
-        name: httpd
-        state: started
-    - name: enable httpd
-      service:
-        name: httpd
-        enabled: yes
-    - name: copy /Ansible/index.html to /var/www/html
+     - name: copy /Ansible/copy1.html to /home/Ansibleslave using Jenkins-AWS instance-Github-Automation
       copy:
-        src: /Ansible/index.html
-        dest: /var/www/html/
+        src: /Ansible/copy1.html
+        dest: /home/Ansibleslave
+
+
